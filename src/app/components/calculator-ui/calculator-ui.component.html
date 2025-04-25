@@ -1,0 +1,47 @@
+<div class="main-container">
+  <div class="top-title">
+    <h5>Calc</h5>
+    @if(isDark){
+    <button class="btn" (click)="changeMood()">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+    }@else{
+    <button class="btn" (click)="changeMood()">
+      <i class="fa-regular fa-sun"></i></button
+    >}
+  </div>
+  <div class="input-field">
+    <input type="text" [(value)]="onScreen" />
+  </div>
+  <div class="keyboard">
+    <div class="number-row">
+      <button class="color-blue" (click)="allClear()">AC</button>
+      <button class="color-blue">C</button>
+      <button class="color-blue">%</button>
+      <button class="operator" (click)="clickOpe('/')">&#247;</button>
+    </div>
+    <div class="number-row">
+      <button class="number" (click)="click('7')">7</button>
+      <button class="number" (click)="click('8')">8</button>
+      <button class="number" (click)="click('9')">9</button>
+      <button class="operator" (click)="clickOpe('*')">&times;</button>
+    </div>
+    <div class="number-row">
+      <button class="number" (click)="click('4')">4</button>
+      <button class="number" (click)="click('5')">5</button>
+      <button class="number" (click)="click('6')">6</button>
+      <button class="operator" (click)="clickOpe('-')">&#8722;</button>
+    </div>
+    <div class="number-row">
+      <button class="number" (click)="click('1')">1</button>
+      <button class="number" (click)="click('2')">2</button>
+      <button class="number" (click)="click('3')">3</button>
+      <button class="operator" (click)="clickOpe('+')">&#43;</button>
+    </div>
+    <div class="number-row">
+      <button class="big-btn number" (click)="click('0')">0</button>
+      <button class="number">.</button>
+      <button class="number equal" (click)="calculate()">=</button>
+    </div>
+  </div>
+</div>
