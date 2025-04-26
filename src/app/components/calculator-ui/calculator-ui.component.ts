@@ -7,14 +7,17 @@ import { Component } from '@angular/core';
   templateUrl: './calculator-ui.component.html',
   styleUrl: './calculator-ui.component.css',
 })
+
 export class CalculatorUiComponent {
   isDark: boolean = true;
   firstNum: string = '';
   lastNum: string = '';
   operator: string = '';
+  screen: string = '';
 
   get onScreen(): string {
-    return `${this.firstNum} ${this.operator} ${this.lastNum}`.trim();
+    this.screen = `${this.firstNum} ${this.operator} ${this.lastNum}`.trim();
+    return this.screen;
   }
 
   changeMood() {
@@ -41,6 +44,12 @@ export class CalculatorUiComponent {
     this.lastNum = '';
   }
 
+  clear() {
+    this.screen.slice;
+    console.log(this.screen);
+    
+  }
+
   calculate() {
     const num1 = Number(this.firstNum);
     const num2 = Number(this.lastNum);
@@ -64,5 +73,5 @@ export class CalculatorUiComponent {
     this.firstNum = result.toString();
     this.lastNum = '';
     this.operator = '';
-  }
+  }   
 }
